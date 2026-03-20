@@ -77,5 +77,19 @@ section.servico h2 {
 
 section.servico ul {
     display: flex;
+    justify-content: center;
+    gap: 5vw;
+    margin-top: 10vh;
 }
 
+section.servico ul li h3{
+    color: #03045E;
+    font-weight: bold;
+    margin-top: 3vh;
+}
+
+section.servico ul li p {
+    color: rgba(3, 4, 94, 0.5);
+    margin-top: 3vh;
+    font-size: .8rem;
+}
