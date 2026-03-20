@@ -1,6 +1,7 @@
 /* USO DIRETO */
 html {
-  font-size: clamp(1rem, calc(0.5rem + 2vw), 1.625rem);
+    font-size: clamp(1rem, calc(0.5rem + 2vw), 1.625rem);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 header {
@@ -11,7 +12,7 @@ header {
     padding: 3vw 10vw 3vw 10vw;
 }
 
-header nav ul { 
+header nav ul {
     display: flex;
     gap: 10px;
     color: #03045E;
@@ -23,3 +24,58 @@ header nav ul li:last-child a {
     padding: 5px 10px 5px 10px;
     border-radius: 6px;
 }
+
+header nav ul li:last-child a:hover {
+    background: #696bcb;
+}
+
+/* === Banner === */
+
+section.banner {
+    display: flex;
+    background: #F7F8FD;
+    padding: 3vw 10vw 3vw 10vw;
+}
+
+section.banner div.texto {
+    padding: 0 5vw 0 0;
+}
+
+section.banner h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #03045E;
+}
+
+section.banner p {
+    margin: 5vh 0 0 0;
+    color: rgba(3, 4, 94, 0.5);
+}
+
+section.banner p button {
+    color: white;
+    font-size: .8rem;
+    font-weight: bold;
+    background: #0098FF;
+    padding: 15px 20px 15px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* === servico === */
+
+section.servico {
+    padding: 3vw 10vw 3vw 10vw;
+    text-align: center;
+}
+
+section.servico h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #03045E;
+}
+
+section.servico ul {
+    display: flex;
+}
+
