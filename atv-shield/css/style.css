@@ -65,8 +65,9 @@ section.banner p button {
 /* === servico === */
 
 section.servico {
-    padding: 3vw 10vw 3vw 10vw;
+    padding: 5vw 10vw 8vw 10vw;
     text-align: center;
+    background: #F7F8FD;
 }
 
 section.servico h2 {
@@ -82,7 +83,7 @@ section.servico ul {
     margin-top: 10vh;
 }
 
-section.servico ul li h3{
+section.servico ul li h3 {
     color: #03045E;
     font-weight: bold;
     margin-top: 3vh;
@@ -92,4 +93,67 @@ section.servico ul li p {
     color: rgba(3, 4, 94, 0.5);
     margin-top: 3vh;
     font-size: .8rem;
+}
+
+/* ==== valores informativos === */
+
+section.valores-info {
+    padding: 5vw 10vw 5vw 10vw;
+    text-align: center;
+    background: #0098FF;
+    color: white;
+}
+
+section.valores-info ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.valores-info ul li h3 {
+    margin-bottom: 1.5vh;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+section.valores-info ul li p {
+    font-size: .6rem;
+}
+
+/* === Footer === */
+
+footer {
+    background: #F7F8FD;
+    padding: 5vw 10vw 5vw 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer div {
+    font-size: .8rem;
+    width: 18vw;
+    color: rgba(3, 4, 94, .5);
+}
+
+footer div:first-of-type img {
+    width: 15vw;
+    margin-bottom: 3vh;
+}
+
+footer div h3 {
+    color: black;
+    font-weight: bold;
+    margin-bottom: 3vh;
+}
+
+ul.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    margin-bottom: 3vh;
+}
+
+ul.social-list {
+    display: flex;
+    gap: 2vw;
 }
