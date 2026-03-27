@@ -1,0 +1,111 @@
+/* USO DIRETO */
+html {
+    font-size: clamp(1rem, calc(0.5rem + 2vw), 1.625rem);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    padding: 3vh 5vw 3vh 5vw;
+}
+
+header h1 a img {
+    width: 10vw;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+
+}
+
+header nav ul li:last-child a {
+    background: #3366FF;
+    color: white;
+    padding: 1vh 2vw;
+    border-radius: 10px;
+}
+
+
+/* === banner === */
+
+section.banner {
+    display: flex;
+    background: #F7F5FD;
+    justify-content: space-between;
+    gap: 5vw;
+    padding: 5vh 5vw 5vh 5vw;
+}
+
+section.banner div.text {
+    width: 35vw;
+}
+
+section.banner div.text h2 {
+    font-size: 5rem;
+    font-weight: bolder;
+    color: #2D2D2D;
+    margin-bottom: 4vh;
+}
+
+section.banner div.text p {
+    font-size: 1rem;
+    color: #2D2D2D50;
+}
+
+section.banner div.text p button {
+    background: #F8D57E;
+    color: black;
+    margin-top: 10vh;
+    padding: 2.5vh 4vw;
+    border-radius: 10px;
+}
+
+section.banner div img {
+    width: 40vw;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+/* === video === */
+
+section.video {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    padding: 8vh 5vw 8vh 5vw;
+    width: 100%;
+    height: auto;
+    max-width: 100vw;
+    background: #F2FAF8;
+
+}
+
+section.video iframe {
+    width: 60vw;
+    height: auto;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* === brands === */
+
+
+section.brands ul {
+    padding: 10vh 10vw 10vh 10vw;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+section.brands ul li img {
+    height: 4vh;
+}
