@@ -109,3 +109,134 @@ section.brands ul {
 section.brands ul li img {
     height: 4vh;
 }
+
+/* === services === */
+
+section.services ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 5vh 10vw 5vh 10vw;
+    gap: 4vw;
+}
+
+section.services ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4vh;
+}
+
+section.services ul li img {
+    width: 6vw;
+    height: auto;
+    margin-bottom: 2vh;
+}
+
+section.services ul li h3 {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #2D2D2D;
+}
+
+section.services ul li p {
+    font-size: .8rem;
+    color: #2D2D2D50;
+}
+
+/* === dylan === */
+
+section.dylan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    padding: 8vh 25vw 8vh 25vw;
+    background: #ECE7FB;
+}
+
+section.dylan img {
+    width: 35vw;
+}
+
+section.dylan div {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    background-image: url('../images/Quote-icon.png');
+    background-size: auto 5vh;
+    background-repeat: no-repeat;
+    padding: 7vh 0 0 0;
+}
+
+section.dylan div p:last-child {
+    font-size: 1rem;
+    font-weight: lighter;
+    color: #2D2D2D50;
+}
+
+/* === footer === */
+
+footer {
+    padding: 5vh 5vw 5vh 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    gap: 5vw;
+    font-weight: lighter;
+    font-size: .8rem;
+}
+
+footer div:first-of-type img {
+    margin-bottom: 10vh;
+}
+
+
+footer div:first-of-type form {
+    margin: 2vh 0 4vh 0;
+}
+
+footer div:first-of-type form input {
+    padding: 1.5vh 1vw;
+    border-radius: 10px;
+    border: 1px solid #2D2D2D50;
+    margin: 0 1vw 0 0;
+    width: 18vw;
+}
+
+footer div:first-of-type form button {
+    background: #3366FF;
+    color: white;
+    padding: 1.5vh 2vw;
+    border-radius: 10px;
+}
+
+footer div:first-of-type ul {
+    display: flex;
+    gap: 1vw;
+    font-weight: bold;
+}
+
+
+footer div:last-of-type ul {
+    display: flex;
+    gap: 1vw;   
+}
+
+footer div:last-of-type ul li ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3vw;
+}
+
+footer div:last-of-type h3 {
+    font-weight: bold;
+}
+
+footer div:last-of-type > ul:last-child {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    margin-top: 12vh;
+}
