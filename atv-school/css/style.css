@@ -1,0 +1,100 @@
+html {
+    font-size: clamp(1rem, calc(0.5rem + 2vw), 1.625rem);
+}
+
+/* Topo */
+header {
+    padding: 4vh 10vw 4vh 10vw;
+}
+
+header nav ul {
+    display: none;
+    gap: 20px;
+    font-size: .8rem;
+}
+
+section.aviso {
+    background: #F6F0E4;
+    padding: 2vw 5vh;
+    margin: 0 10vw;
+    text-align: center;
+    border-radius: 6px;
+}
+
+section.aviso a {
+    text-decoration: underline;
+}
+
+section.banner {
+    text-align: center;
+    padding: 2vh 0;
+    margin: 0 10vw;
+}
+
+section.banner h1 {
+    font-size: 2.5rem;
+    margin: 8vh 0;
+}
+
+section.banner a {
+    text-decoration: underline;
+}
+
+section.news {
+    padding: 2vh 0;
+    margin: 0 10vw;
+    text-align: center;
+}
+
+section.news h2 {
+    font-size: 1.6rem;
+    margin-bottom: 5vh;
+}
+
+section.news ul {
+    font-size: .7rem;
+}
+
+section.news ul li {
+    border: 1px solid #E4E4E4;
+    border-radius: 12px;
+    padding: 4vh 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+section.news ul li h3 { 
+    font-size: 1.2rem;
+}
+
+section.news ul li h4 { 
+    font-size: 0.9rem;
+}
+
+
+section.news ul li:not(:first-of-type) {
+    margin-top: 2vh;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    header nav>a {
+        display: none;
+    }
+
+    header nav ul {
+        display: flex;
+    }
+
+    section.news ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    section.news ul li {
+        width: 30%;
+    }
+}
