@@ -38,6 +38,7 @@ header nav {
 section.banner {
     height: 70vh;
     background: url(../images/background-footer.webp), linear-gradient(#E1F4FF);
+    
     display: flex;
     align-items: center;
     gap: 5vw;
@@ -72,4 +73,44 @@ section.banner {
     }
 
 
+}
+
+section.ready-to-ride {
+    padding: 6vh 8vw;
+    text-align: center;
+
+    & h2{
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #252B42;
+    }
+
+    & p{
+        color: #737373;
+        width: 45vw;
+        margin: 2vh auto 10vh auto;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        & img{
+            object-fit: contain;
+        }
+
+        & ul{
+            width: 50vw;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5vw;
+            text-align: left;
+            background-color: #E1F4FF;
+            
+            & li {
+                width: 50%;
+
+            }
+        }
+    }
 }
