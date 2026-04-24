@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>Vai de Álcool?</h2>
+        <form action="#">
+          <p>
+            <label for="alcool"> Álcool </label>
+            <input id="alcool" type="text" />
+          </p>
+
+          <p>
+            <label for="gasolina"> Gasolina </label>
+            <input id="gasolina" type="text" />
+          </p>
+          <button onclick="validar()">Validar</button>
+        </form>
+
+        <h3></h3>
+      </section>
+    </main>
+
+    <style>
+        h3{
+            color: red;
+        }
+    </style>
+
+    <script>
+      let texto = "Olá mundo";
+
+      // alert(texto);
+      console.log(texto);
+
+      function validar() {
+        let gasolina = document.getElementById("gasolina").value;
+        // console.log(gasolina);
+
+        let alcool = document.querySelector("#alcool").value;
+
+        // console.log(parseFloat(gasolina) + parseFloat(alcool));
+
+        if (parseFloat(alcool) > parseFloat(gasolina) * 0.7) {
+          console.log("Abastecer com gasolina");
+          document.querySelector("h3").innerText = "Abastecer com gasolina";
+        
+        } else {
+          console.log("Abastecer com álcool");
+          document.querySelector("h3").innerText = "Abastecer com álcool";
+
+        }
+      }
+    </script>
+  </body>
+</html>
