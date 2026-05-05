@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Airbnb</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>Calculadora Airbnb</h2>
+        <p>Diaria: R$<span id="valorDiaria"></span></p>
+        <form action="#">
+          <p>
+            <label for="checkin"> Check-in: </label>
+
+            <input type="date" id="checkin" />
+          </p>
+          <p>
+            <label for="checkout"> Check-out: </label>
+            <input type="date" id="checkout" onchange="calculaReserva()" />
+          </p>
+          <p>
+            <label for="qtdHospedes"> Hóspedes: </label>
+            <input
+              type="number"
+              min="1"
+              max="4"
+              id="qtdHospedes"
+              onchange="calculaReserva()"
+            />
+          </p>
+          <button onclick="calculaReserva()">Reservar</button>
+
+          <p>
+            <label for="cupom"> cupom: </label>
+            <input type="text" id="cupom" />
+          </p>
+        </form>
+        <p><span id="calculoNoites"></span> <span id="valorNoites"></span></p>
+        <p>Taxa de limpeza: R$<span id="valorLimpeza"></span></p>
+        <p id="valorServico"></p>
+      </section>
+    </main>
+
+    <script>
+      const valorDiaria = 510;
+      const valorLimpeza = 120;
+      const porcServico = 0.15;
+
+      document.getElementById("valorDiaria").textContent = valorDiaria;
+      document.getElementById("valorLimpeza").textContent = valorLimpeza;
+
+      function calculaReserva() {
+        let checkin = document.getElementById("checkin").value;
+        let checkout = document.getElementById("checkout").value;
+
+        let diasHosp = calculaDias(checkin, checkout);
+        valorNoites = valorDiaria * diasHosp;
+
+        document.getElementById("calculoNoites").textContent = `R$${valorDiaria} x ${diasHosp} noite(s)`;
+        document.getElementById("valorNoites").textContent = `R$${valorNoites}`;
+
+      }
+
+      function calculaDias(entrada, saida) {
+        let dataEntrada = new Date(entrada);
+        let dataSaida = new Date(saida);
+
+        let diferenca = dataSaida - dataEntrada;
+        return Math.ceil(diferenca / (1000 * 3600 * 24));
+      }
+    </script>
+  </body>
+</html>
