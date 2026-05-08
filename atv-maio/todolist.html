@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>To Do List</h2>
+        <form action="#">
+          <input type="text" required placeholder="Add new task" id="tarefa" />
+          <button type="button" type="submit" id="adicionar">Add</button>
+        </form>
+        <ul id="todoList"></ul>
+      </section>
+    </main>
+    <style>
+      li {
+        display: flex;
+        width: 40vw;
+        justify-content: space-between;
+
+        & span {
+            display: flex;
+            gap: 1vw;
+        }
+      }
+    </style>
+
+    <script>
+      let botao = document.getElementById("adicionar");
+
+      botao.addEventListener("click", function () {
+        let campo = document.querySelector("input");
+        console.log(campo.value);
+
+        let li = document.createElement("li");
+
+        li.innerHTML = `<span> <input type="checkbox"><p>${campo.value}</p> </span>
+        <span><button onclick="remover(this)">Delete</button><button>Edit</button></span>`;
+
+        ul = document.getElementById("todoList");
+        ul.appendChild(li);
+        campo.value = "";
+        campo.focus();
+      });
+
+      function remover(elemento){
+        elemento.parentElement.parentElement.remove()
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>FAQ</h2>
+        <ul>
+          <li>
+            <h3>Como fazer matricula</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Assumenda veniam perspiciatis nobis dolorem eaque eius delectus
+              rerum repudiandae. Maxime eaque voluptatum sunt corrupti
+              recusandae numquam nisi eius reiciendis provident esse.
+            </p>
+          </li>
+          <li>
+            <h3>Como solicitar segunda chamada</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Assumenda veniam perspiciatis nobis dolorem eaque eius delectus
+              rerum repudiandae. Maxime eaque voluptatum sunt corrupti
+              recusandae numquam nisi eius reiciendis provident esse.
+            </p>
+          </li>
+          <li>
+            <h3>Como pedir aproveitamento de disciplina</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Assumenda veniam perspiciatis nobis dolorem eaque eius delectus
+              rerum repudiandae. Maxime eaque voluptatum sunt corrupti
+              recusandae numquam nisi eius reiciendis provident esse.
+            </p>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <style>
+      * {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+      }
+      section {
+        width: 30%;
+        margin: 10vh auto;
+      }
+
+      ul li {
+        background-color: rgb(208, 208, 208);
+        padding: 10px;
+
+        & h3 {
+          background-color: rgb(57, 57, 57);
+          color: white;
+        }
+
+        & p {
+          display: none;
+        }
+      }
+    </style>
+
+    <script>
+      let titulos = document.querySelectorAll("h3");
+
+      titulos.forEach(function (titulo) {
+        titulo.addEventListener("click", function () {
+          console.log("Você clicou em: " + titulo.innerText);
+
+          
+          titulo.nextElementSibling.style.display = "block";
+        });
+      });
+    </script>
+  </body>
+</html>
