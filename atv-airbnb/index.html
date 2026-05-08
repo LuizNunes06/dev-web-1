@@ -24,6 +24,7 @@
             <label for="qtdHospedes"> Hóspedes: </label>
             <input
               type="number"
+              value="1"
               min="1"
               max="4"
               id="qtdHospedes"
@@ -39,7 +40,7 @@
         </form>
         <p><span id="calculoNoites"></span> <span id="valorNoites"></span></p>
         <p>Taxa de limpeza: R$<span id="valorLimpeza"></span></p>
-        <p id="valorServico"></p>
+        <p>Taxa de serviço: R$<span id="valorServico"></span></p>
       </section>
     </main>
 
@@ -54,13 +55,37 @@
       function calculaReserva() {
         let checkin = document.getElementById("checkin").value;
         let checkout = document.getElementById("checkout").value;
+        let TaxaHospedes = document.getElementById("qtdHospedes").value;
+        let cupom = document.getElementById("cupom").value
+        let taxaServico = 0
+
+
+        if (TaxaHospedes > 4) {
+          document.getElementById("qtdHospedes").value = 4;
+        } else if (TaxaHospedes < 1) {
+          document.getElementById("qtdHospedes").value = 1;
+        }
 
         let diasHosp = calculaDias(checkin, checkout);
         valorNoites = valorDiaria * diasHosp;
 
-        document.getElementById("calculoNoites").textContent = `R$${valorDiaria} x ${diasHosp} noite(s)`;
-        document.getElementById("valorNoites").textContent = `R$${valorNoites}`;
+        taxaHospedes = valorNoites * ((TaxaHospedes - 1) * 0.2);
+        taxaServico = (taxaHospedes + valorNoites) * 0.15;
 
+        cupom = cupom.replace("OFF", "")
+        
+        let valorCupom = 0
+        if (Number(cupom) && Number(cupom) < 100 && Number(cupom) >= 0){
+          valorCupom = Number(cupom)/ 100
+          
+          
+        }
+        
+        document.getElementById("valorServico").textContent = `${taxaServico}`;
+        
+        document.getElementById("calculoNoites").textContent =
+          `R$${valorDiaria} x ${diasHosp} noite(s)`;
+        document.getElementById("valorNoites").textContent = `R$${valorNoites}`;
       }
 
       function calculaDias(entrada, saida) {
