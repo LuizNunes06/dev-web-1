@@ -1,0 +1,25 @@
+html {
+    font-size: clamp(0.8rem, calc(0.2rem + 2vw), 1.3rem);
+    font-family:
+        "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+        Arial, sans-serif;
+    color: #000D22;
+}
+main {
+    background-color: #F5F6F8;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    border: 1px solid #1E6AE2;
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    background-color: #FEFEFE;
+
+    & h2{
+        font-size: 1.5rem;
+    }
+}

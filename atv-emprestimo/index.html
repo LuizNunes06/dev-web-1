@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de empréstimo</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>Simulador de Empréstimo</h2>
+
+        <form action="#">
+          <p>
+            <label for="renda"> Renda Bruta Mensal (R$):</label>
+            <input id="renda" type="number" />
+          </p>
+
+          <p>
+            <label for="emprestimo"> Valor do Empréstimo (R$):</label>
+            <input id="emprestimo" type="number" />
+          </p>
+
+          <p>
+            <label for="prazo"> Prazo para pagamento (em meses):</label>
+            <input id="prazo" type="number" />
+          </p>
+
+          <button onclick="calcularEmprestimo()">Calcular parcelas</button>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      function calcularCapacidade(mensal, renda, valorTotal) {
+        if (mensal > renda * 0.3) {
+          alert(
+            "As parcelas não são consideradas adequadas, com o valor de R$ " +
+              mensal,
+          );
+
+          console.log("valor total: " + valorTotal);
+        } else {
+          alert(
+            "As parcelas são consideradas adequadas, com o valor de R$ " +
+              mensal,
+          );
+          console.log("valor total: " + valorTotal);
+        }
+      }
+
+      function calcularEmprestimo() {
+        let renda = document.getElementById("renda").value;
+        let emprestimo = document.getElementById("emprestimo").value;
+        let prazo = document.getElementById("prazo").value;
+
+        prazoAnos = Math.floor(prazo / 12);
+
+        valorTotal = emprestimo * (1 + 0.02) ** prazoAnos;
+
+        valorMensal = valorTotal / prazo;
+
+        calcularCapacidade(valorMensal, renda, valorTotal);
+      }
+    </script>
+  </body>
+</html>
