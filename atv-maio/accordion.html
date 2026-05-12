@@ -62,7 +62,9 @@
         }
 
         & p {
-          display: none;
+          overflow-y: hidden;
+          max-height: 0;
+          transition: all .5s ease-in-out;
         }
       }
     </style>
@@ -74,8 +76,12 @@
         titulo.addEventListener("click", function () {
           console.log("Você clicou em: " + titulo.innerText);
 
-          
-          titulo.nextElementSibling.style.display = "block";
+
+          if (titulo.nextElementSibling.style.maxHeight == "10vh") {
+            titulo.nextElementSibling.style.maxHeight = "0";
+          } else {
+            titulo.nextElementSibling.style.maxHeight = "10vh";
+          }
         });
       });
     </script>
