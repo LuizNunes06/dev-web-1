@@ -7,8 +7,8 @@
   </head>
   <body>
     <main>
+      <h2>To Do List</h2>
       <section>
-        <h2>To Do List</h2>
         <form action="#">
           <input type="text" required placeholder="Add new task" id="tarefa" />
           <button type="button" type="submit" id="adicionar">Add</button>
@@ -17,14 +17,84 @@
       </section>
     </main>
     <style>
-      li {
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Courier New", Courier, monospace;
+        border: none;
+        outline: none;
+      }
+
+      main {
         display: flex;
-        width: 40vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: rgb(239, 244, 244);
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: normal;
+        margin-bottom: 2vh;
+      }
+
+      section {
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        padding: 2vh 1vw;
+        box-shadow: 1px 3px 10px rgb(176, 176, 176);
+        min-width: 35vw;
+        max-width: 85vw;
+      }
+
+      form {
+        display: flex;
         justify-content: space-between;
 
+        & input {
+          width: 100%;
+          padding: 1vh 1vw;
+        }
+
+        & button {
+          background-color: rgb(49, 145, 255);
+          color: white;
+          padding: 0 1vw;
+          font-weight: bold;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+
+      li {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 2vh;
+
         & span {
-            display: flex;
-            gap: 1vw;
+          display: flex;
+          gap: 1vw;
+          font-weight: 100;
+
+          & button {
+            background: transparent;
+            cursor: pointer;
+          }
+
+          & button:first-of-type {
+            color: red;
+          }
+
+          & button:last-of-type {
+            color: rgb(49, 145, 255);
+          }
+
+          & input:checked + p {
+            text-decoration: line-through;
+          }
         }
       }
     </style>
@@ -47,8 +117,8 @@
         campo.focus();
       });
 
-      function remover(elemento){
-        elemento.parentElement.parentElement.remove()
+      function remover(elemento) {
+        elemento.parentElement.parentElement.remove();
       }
     </script>
   </body>
