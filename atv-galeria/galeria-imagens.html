@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria Imagens</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <img
+          src="./galeria-imagens/image.png"
+          class="img-principal"
+          alt="img-principal"
+        />
+        <span class="listagem">
+          <img
+            class="img-listagem"
+            src="./galeria-imagens/pexels-ikeen-james-2274787.png"
+            alt="ikeen-james"
+          />
+          <img
+            class="img-listagem"
+            src="./galeria-imagens/pexels-jonathan-borba-3009323.png"
+            alt="jonathan-borba"
+          />
+          <img
+            class="img-listagem"
+            src="./galeria-imagens/pexels-pablo-macedo-845802.png"
+            alt="pablo-macedo"
+          />
+          <img
+            class="img-listagem"
+            src="./galeria-imagens/pexels-pixabay-162744.png"
+            alt=""
+            pixabay-162744
+          />
+          <img
+            class="img-listagem"
+            src="./galeria-imagens/pexels-polina-tankilevitch-4518839.png"
+            alt="polina-tankilevitch"
+          />
+          <img
+            class="img-listagem"
+            src="./galeria-imagens/pexels-polina-tankilevitch-5419336.png"
+            alt="polina-tankilevitch"
+          />
+          <img
+            class="img-listagem"
+            src="./galeria-imagens/pexels-sebastian-coman-photography-3590401.png"
+            asebastian-comanlt=""
+          />
+          <img
+            class="img-listagem"
+            src="./galeria-imagens/pexels-victor-miyata-3682837.png"
+            alt="victor-miyata"
+          />
+          <img
+            class="img-listagem"
+            src="./galeriaimagens/pexels-vincent-rivaud-2471171.png"
+            alt="vincent-rivaud"
+          />
+        </span>
+      </section>
+    </main>
+  </body>
+  <style>
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+    img.img-principal {
+    width: 80vw;
+    }
+  </style>
+
+  <script>
+    const imagemPrincipal = document.querySelector("main section > img");
+    const imagens = document.querySelectorAll(".img-listagem");
+
+    imagens.forEach(function (imagen) {
+      imagen.parentElement.addEventListener("click", function () {
+        console.log("Você clicou em: " + imagen);
+        // const texto = imagen.parentElement.nextElementSibling;
+
+        // if (texto.style.height == "10vh") {
+        //   texto.style.height = "0";
+        //   texto.style.padding = "0";
+        //   imagen.parentElement.style.borderRadius = "10px";
+        //   imagen.nextElementSibling.style.rotate = "0deg";
+        // } else {
+        //   texto.style.height = "10vh";
+        //   texto.style.padding = "1vh 1vw";
+        //   imagen.parentElement.style.borderRadius = "10px 10px 0 0 ";
+        //   imagen.nextElementSibling.style.rotate = "180deg";
+        // }
+      });
+    });
+  </script>
+</html>
