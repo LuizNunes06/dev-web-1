@@ -8,92 +8,139 @@
   <body>
     <main>
       <section>
-        <img
-          src="./galeria-imagens/image.png"
-          class="img-principal"
-          alt="img-principal"
-        />
-        <span class="listagem">
-          <img
-            class="img-listagem"
-            src="./galeria-imagens/pexels-ikeen-james-2274787.png"
-            alt="ikeen-james"
-          />
-          <img
-            class="img-listagem"
-            src="./galeria-imagens/pexels-jonathan-borba-3009323.png"
-            alt="jonathan-borba"
-          />
-          <img
-            class="img-listagem"
-            src="./galeria-imagens/pexels-pablo-macedo-845802.png"
-            alt="pablo-macedo"
-          />
-          <img
-            class="img-listagem"
-            src="./galeria-imagens/pexels-pixabay-162744.png"
-            alt=""
-            pixabay-162744
-          />
-          <img
-            class="img-listagem"
-            src="./galeria-imagens/pexels-polina-tankilevitch-4518839.png"
-            alt="polina-tankilevitch"
-          />
-          <img
-            class="img-listagem"
-            src="./galeria-imagens/pexels-polina-tankilevitch-5419336.png"
-            alt="polina-tankilevitch"
-          />
-          <img
-            class="img-listagem"
-            src="./galeria-imagens/pexels-sebastian-coman-photography-3590401.png"
-            asebastian-comanlt=""
-          />
-          <img
-            class="img-listagem"
-            src="./galeria-imagens/pexels-victor-miyata-3682837.png"
-            alt="victor-miyata"
-          />
-          <img
-            class="img-listagem"
-            src="./galeriaimagens/pexels-vincent-rivaud-2471171.png"
-            alt="vincent-rivaud"
-          />
-        </span>
+        <div>
+          <p></p>
+          <img src="" class="img-principal" alt="img-principal" />
+        </div>
+        <span class="listagem"> </span>
       </section>
     </main>
   </body>
   <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
     section {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
     img.img-principal {
-    width: 80vw;
+      width: 100%;
     }
+    
+    section > div {
+      position: relative;
+      width: 68vw;
+
+      & p{
+        position: absolute;
+        bottom: 5px;
+        padding: 1vh 1vw;
+        
+        width: 66vw;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.384);
+        z-index: 10;
+       }
+    }
+
   </style>
-
   <script>
-    const imagemPrincipal = document.querySelector("main section > img");
-    const imagens = document.querySelectorAll(".img-listagem");
+    let imagemPrincipal = document.querySelector("section > div > img");
+    let imagensList = document.querySelector(".listagem");
 
-    imagens.forEach(function (imagen) {
-      imagen.parentElement.addEventListener("click", function () {
-        console.log("Você clicou em: " + imagen);
-        // const texto = imagen.parentElement.nextElementSibling;
+    let imagensMap = [
+      {
+        alt: "img-0",
+        listSrc: "./galeria-imagens/image.png",
+        mainSrc: "./fotos-principal/image.png",
+        desc: "High hygiene standards",
+      },
+      {
+        alt: "img-1",
+        listSrc: "./galeria-imagens/image-1.png",
+        mainSrc: "./fotos-principal/image-1.png",
+        desc: "Well-Maintained Private Rooms",
+      },
+      {
+        alt: "img-2",
+        listSrc: "./galeria-imagens/image-2.png",
+        mainSrc: "./fotos-principal/image-2.png",
+        desc: "Well-Furbished Shared Rooms",
+      },
+      {
+        alt: "img-3",
+        listSrc: "./galeria-imagens/image-3.png",
+        mainSrc: "./fotos-principal/image-3.png",
+        desc: "State-of-the-art Technology",
+      },
+      {
+        alt: "img-4",
+        listSrc: "./galeria-imagens/image-4.png",
+        mainSrc: "./fotos-principal/image-4.png",
+        desc: "Clean and Well-Maintained Operating Rooms",
+      },
+      {
+        alt: "img-5",
+        listSrc: "./galeria-imagens/image-5.png",
+        mainSrc: "./fotos-principal/image-5.png",
+        desc: "Hospital Interior Space ",
+      },
+      {
+        alt: "img-6",
+        listSrc: "./galeria-imagens/image-6.png",
+        mainSrc: "./fotos-principal/image-6.png",
+        desc: "Same-Day Operating Theatres on Standby",
+      },
+      {
+        alt: "img-7",
+        listSrc: "./galeria-imagens/image-7.png",
+        mainSrc: "./fotos-principal/image-7.png",
+        desc: "Hospital Lobby Reception",
+      },
+      {
+        alt: "img-8",
+        listSrc: "./galeria-imagens/image-8.png",
+        mainSrc: "./fotos-principal/image-8.png",
+        desc: "Clean and safe infrastructure",
+      },
+      {
+        alt: "img-9",
+        listSrc: "./galeria-imagens/image-9.png",
+        mainSrc: "./fotos-principal/image-9.png",
+        desc: "Transportable beds",
+      },
+    ];
 
-        // if (texto.style.height == "10vh") {
-        //   texto.style.height = "0";
-        //   texto.style.padding = "0";
-        //   imagen.parentElement.style.borderRadius = "10px";
-        //   imagen.nextElementSibling.style.rotate = "0deg";
-        // } else {
-        //   texto.style.height = "10vh";
-        //   texto.style.padding = "1vh 1vw";
-        //   imagen.parentElement.style.borderRadius = "10px 10px 0 0 ";
-        //   imagen.nextElementSibling.style.rotate = "180deg";
-        // }
+    imagemPrincipal.src = imagensMap[0].mainSrc;
+    imagemPrincipal.previousElementSibling.textContent = imagensMap[0].desc
+
+    for (i of imagensMap) {
+      let img = document.createElement("img");
+      img.src = i.listSrc;
+      img.alt = i.alt;
+      imagensList.appendChild(img);
+    }
+
+    let imagens = document.querySelectorAll(".listagem > img");
+
+    imagens.forEach(function (imagem) {
+      imagem.addEventListener("click", function () {
+        let indexImg = Number(imagem.alt.replace("img-", ""));
+        const img = document.querySelector("div > img") 
+        imagemPrincipal.src = imagensMap[indexImg].mainSrc;
+        imagemPrincipal.nextElementSibling.textContent = imagensMap[indexImg].desc
       });
     });
   </script>
