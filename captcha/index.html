@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade Captcha</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div>
+          <h1>Captcha Color</h1>
+          <p>00:00</p>
+        </div>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <h2>CLIQUE NA COR: <span></span></h2>
+      </section>
+    </main>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: none;
+        list-style: none;
+      }
+
+      section {
+        font-family:
+          "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+          Arial, sans-serif;
+        width: 50vw;
+        margin: 5vw auto;
+        background: rgb(213, 213, 213);
+      }
+
+      section div {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      section div h1 {
+        font-size: 2rem;
+      }
+
+      section div p {
+        font-size: 2rem;
+      }
+
+      section ul {
+        display: grid;
+        grid-template-columns: 10vw 10vw 10vw;
+        gap: 10px;
+        width: 30vw;
+        margin: 0 auto;
+      }
+
+      section ul li {
+        height: 10vw;
+        background-color: green;
+      }
+    </style>
+
+    <script>
+      const itens = document.querySelectorAll("li");
+
+      const colors = [
+        { name: "AZUL", value: "#3498db" },
+        { name: "VERDE", value: "#1abc9c" },
+        { name: "ROXO", value: "#9b59b6" },
+        { name: "LARANJA", value: "#e67e22" },
+        { name: "VERMELHO", value: "#e74c3c" },
+        { name: "CINZA", value: "#34495e" },
+      ];
+
+      for (let i = 0; i < itens.length; i++) {
+        itens[i].addEventListener("click", function () {
+          let corSpan = document.querySelector("span").style.color;
+
+          if (itens[i].style.background == corSpan) {
+            sorteiaCor()
+          }
+        });
+
+        itens[i].style.background = colors[i].value;
+      }
+
+      function sorteiaCor() {
+        let indice = parseInt(Math.random() * 6);
+        let cor = colors[indice];
+        const span = document.querySelector("h2 > span");
+
+        span.textContent = cor.name;
+        span.style.color = cor.value;
+      }
+
+      sorteiaCor()
+    </script>
+  </body>
+</html>
