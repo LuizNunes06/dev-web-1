@@ -1,158 +1,218 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividade Captcha</title>
-  </head>
-  <body>
-    <main>
-      <section class="captcha">
-        <div>
-          <h1>Captcha Color</h1>
-          <p>00:00</p>
-        </div>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <h2>CLIQUE NA COR: <span></span></h2>
-      </section>
 
-      <section class="bem-vindo"><h1>BEM VINDO!</h1></section>
-      <section class="mal-vindo">
-        <h1>VOCÊ NÃO É BEM VINDO, SEJA MAIS RAPIDO!</h1>
-      </section>
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade Captcha</title>
+</head>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        border: none;
-        list-style: none;
+<body>
+  <main>
+    <section class="captcha">
+      <div>
+        <h1>Captcha Color</h1>
+        <p>00:00</p>
+      </div>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <h2>CLIQUE NA COR: <span></span></h2>
+      <h3>Acertos: <span></span></p>
+    </section>
+
+    <section class="bem-vindo">
+      <h1>BEM VINDO!</h1>
+    </section>
+    <section class="mal-vindo">
+      <h1>VOCÊ NÃO É BEM VINDO, SEJA MAIS RÁPIDO!</h1>
+    </section>
+  </main>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: none;
+      list-style: none;
+    }
+
+    section {
+      font-family:
+        "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+        Arial, sans-serif;
+      width: fit-content;
+      margin: 5vw auto;
+    }
+
+    section.bem-vindo,
+    section.mal-vindo {
+      display: none;
+    }
+
+    section div {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    section div h1 {
+      font-size: 2rem;
+    }
+
+    section h2 {
+      margin: 1vh auto;
+      padding: 1vh 0;
+      text-align: center;
+      border-bottom: 1px solid black;
+      border-top: 1px solid black;
+    }
+
+    section h3 {
+      text-align: center;
+
+      & span {
+        color: green;
+      }
+    }
+
+    section div p {
+      font-size: 2rem;
+    }
+
+    section ul {
+      display: grid;
+      grid-template-columns: 10vw 10vw 10vw;
+      width: 30vw;
+      margin: 2vh 0;
+    }
+
+    section ul li {
+      height: 10vw;
+      transition: all ease-in-out 0.2s;
+    }
+
+    section ul li:hover {
+      scale: 1.1;
+    }
+  </style>
+
+  <script>
+    const musicaAmbiente = new Audio("./audios/roblox-tycoon-music.mp3");
+    const somTempoAcabou = new Audio("./audios/spongebob-fail.mp3");
+    const somErro = new Audio("./audios/taco-bell-bong-sfx.mp3");
+    const somSucesso = new Audio("./audios/we-are-the-champions-copia.mp3");
+
+    if (!localStorage.acertos) {
+      localStorage.setItem("acertos", 0)
+    }
+
+    let acertos = localStorage.getItem("acertos");
+
+    const itens = document.querySelectorAll("li");
+
+    let spanAcertos = document.querySelector(".captcha > h3 > span")
+    spanAcertos.textContent = acertos
+
+    let colors = [
+      { name: "AZUL", value: "#3498db" },
+      { name: "VERDE", value: "#1abc9c" },
+      { name: "ROXO", value: "#9b59b6" },
+      { name: "LARANJA", value: "#e67e22" },
+      { name: "VERMELHO", value: "#e74c3c" },
+      { name: "CINZA", value: "#34495e" },
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
       }
 
-      section {
-        font-family:
-          "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
-          Arial, sans-serif;
-        width: 50vw;
-        margin: 5vw auto;
-        background: rgb(213, 213, 213);
-      }
-
-      section.bem-vindo,
-      section.mal-vindo {
-        display: none;
-      }
-
-      section div {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      section div h1 {
-        font-size: 2rem;
-      }
-
-      section div p {
-        font-size: 2rem;
-      }
-
-      section ul {
-        display: grid;
-        grid-template-columns: 10vw 10vw 10vw;
-        gap: 10px;
-        width: 30vw;
-        margin: 0 auto;
-      }
-
-      section ul li {
-        height: 10vw;
-        background-color: green;
-      }
-    </style>
-
-    <script>
-      const musicaAmbiente = new Audio("./audios/roblox-tycoon-music.mp3");
-      const somTempoAcabou = new Audio("./audios/spongebob-fail.mp3");
-      const somErro = new Audio("./audios/taco-bell-bong-sfx.mp3");
-      const somSucesso = new Audio("./audios/we-are-the-champions-copia.mp3");
-
-      const itens = document.querySelectorAll("li");
-      let acertos = 0;
-
-      const colors = [
-        { name: "AZUL", value: "#3498db" },
-        { name: "VERDE", value: "#1abc9c" },
-        { name: "ROXO", value: "#9b59b6" },
-        { name: "LARANJA", value: "#e67e22" },
-        { name: "VERMELHO", value: "#e74c3c" },
-        { name: "CINZA", value: "#34495e" },
-      ];
-
-      musicaAmbiente.play();
       for (let i = 0; i < itens.length; i++) {
-        itens[i].addEventListener("click", function () {
-          let corSpan = document.querySelector("span").innerText;
-
-          if (itens[i].dataset.nomeCor == corSpan) {
-            acertos++;
-            sorteiaCor();
-
-            if (acertos >= 3) {
-              musicaAmbiente.pause();
-              somSucesso.play();
-              document.querySelector(".captcha").style.display = "none";
-              document.querySelector(".bem-vindo").style.display = "block";
-            }
-            // else if (itens[i].dataset.nomeCor != corSpan) {
-            //   somErro.play();
-            //   acertos = 0;
-            //   sorteiaCor();
-            // }
-          }
-        });
-
         itens[i].style.background = colors[i].value;
         itens[i].dataset.nomeCor = colors[i].name;
       }
+      return array;
+    }
 
-      function sorteiaCor() {
-        let indice = parseInt(Math.random() * 6);
-        let cor = colors[indice];
-        const span = document.querySelector("h2 > span");
+    if (acertos >= 3) {
+      somSucesso.play();
+      document.querySelector(".captcha").style.display = "none";
+      document.querySelector(".bem-vindo").style.display = "block";
+    }
 
-        span.textContent = cor.name;
+    for (let i = 0; i < itens.length; i++) {
+      itens[i].addEventListener("click", function () {
+        let corSpan = document.querySelector("span").innerText;
 
-        let indiceCor = parseInt(Math.random() * 6);
-
-        span.style.color = colors[indiceCor].value;
-      }
-
-      const inicio = Date.now();
-      intervalo = setInterval(() => {
-        let agora = Date.now();
-        let ms = agora - inicio;
-
-        cronometro = new Date(ms).toString().substr(19, 5);
-        document.querySelector("div > p").innerText = cronometro;
-
-        if (ms >= 6000 && acertos < 3) {
-          musicaAmbiente.pause();
-          somTempoAcabou.play();
-          document.querySelector(".captcha").style.display = "none";
-          document.querySelector(".mal-vindo").style.display = "block";
+        if (itens[i].dataset.nomeCor != corSpan) {
+          somErro.play();
+          acertos = 0;
         }
-        console.log(cronometro);
-      }, 1000);
 
-      sorteiaCor();
-    </script>
-  </body>
+        if (itens[i].dataset.nomeCor == corSpan) {
+          acertos++;
+          spanAcertos.textContent = acertos
+          localStorage.removeItem("acertos")
+          localStorage.setItem("acertos", acertos)
+
+
+          if (acertos >= 3) {
+            musicaAmbiente.pause();
+            somSucesso.play();
+            document.querySelector(".captcha").style.display = "none";
+            document.querySelector(".bem-vindo").style.display = "block";
+          }
+        }
+
+        colors = shuffle(colors);
+        sorteiaCor();
+      });
+
+      itens[i].style.background = colors[i].value;
+      itens[i].dataset.nomeCor = colors[i].name;
+    }
+
+    function sorteiaCor() {
+      let indice = parseInt(Math.random() * 6);
+      let cor = colors[indice];
+      const span = document.querySelector("h2 > span");
+
+      span.textContent = cor.name;
+
+      let indiceCor = parseInt(Math.random() * 6);
+
+      span.style.color = colors[indiceCor].value;
+    }
+
+    const inicio = Date.now();
+    intervalo = setInterval(() => {
+      let agora = Date.now();
+      let ms = agora - inicio;
+
+      cronometro = new Date(ms).toString().substr(19, 5);
+      document.querySelector("div > p").innerText = cronometro;
+
+      if (ms >= 10000 && acertos < 3) {
+        musicaAmbiente.pause();
+        somTempoAcabou.play();
+        acertos = 0
+        document.querySelector(".captcha").style.display = "none";
+        document.querySelector(".mal-vindo").style.display = "block";
+      }
+      console.log(cronometro);
+    }, 1000);
+
+    musicaAmbiente.play();
+    sorteiaCor();
+  </script>
+</body>
+
 </html>
