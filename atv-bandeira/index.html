@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Bandeira</title>
+  </head>
+  <body>
+    <main>
+      <section class="start-page">
+        <h1>Encontre a bandeira</h1>
+        <h2>Indique a bandeira que corresponde ao país indicado</h2>
+
+        <button onclick="startGame()">Iniciar</button>
+      </section>
+
+      <section class="game-page">
+        <span class="timer">
+          <img src="./images/clock-icon.svg" alt="clock-icon" />
+          <p></p>
+
+          <img src="./images/volume-icon.svg" alt="volume-icon" />
+        </span>
+
+        <h2></h2>
+
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <div>
+          <div class="hits">
+            <span></span>
+            <p>Acertos</p>
+          </div>
+          <button>SAIR</button>
+        </div>
+      </section>
+    </main>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: none;
+        list-style: none;
+        font-family:
+          "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+          Arial, sans-serif;
+      }
+
+      section {
+        height: 100vh;
+        box-sizing: border-box;
+        padding: 10vh 10vw;
+      }
+
+      /* Start page */
+      section.start-page {
+        background: url("./images/flags-background.png") no-repeat;
+        background-size: contain;
+        background-position: 0 -20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 1vh;
+        text-align: center;
+
+        & h1 {
+          color: #3d3d3d;
+          font-size: 2.8rem;
+          text-wrap-style: balance;
+        }
+
+        & h2 {
+          color: #3d3d3dbb;
+          font-size: 1rem;
+          font-weight: lighter;
+        }
+
+        & button {
+          background-color: #53b175;
+          color: #fff9ff;
+          margin-top: 1vh;
+          font-size: 1rem;
+          padding: 3vh 0;
+          border-radius: 15px;
+        }
+      }
+    </style>
+
+    <script>
+        let startPage = document.querySelector(".start-page")
+        let gamePage = document.querySelector(".game-page")
+
+        function startGame(){
+            startPage.style.display = "none"
+            gamePage.style.display = "none"
+        }
+    </script>
+  </body>
+</html>
