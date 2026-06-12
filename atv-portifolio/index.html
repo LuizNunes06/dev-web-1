@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portifolio</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./connect.html">Connect</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Hi, I’m <span>Alex</span></h1>
+        <h2>
+          a <span>UI/UX Designer</span> based in <span>Los Angeles</span>. With
+          over <span>3 years of experience</span>, I specialize in creating
+          user-friendly digital products that solve real-world problems.
+        </h2>
+      </section>
+
+      <section class="projects">
+        <div class="proj-card">
+          <h2>ShopEase</h2>
+          <img src="./images/shopease-img.png" alt="ShopEase" />
+          <ul>
+            <li>Mobile</li>
+            <li>Application</li>
+            <li>E-Commerce</li>
+          </ul>
+        </div>
+        <div class="proj-card">
+          <h2>ShopEase</h2>
+          <img src="./images/shopease-img.png" alt="ShopEase" />
+          <ul>
+            <li>Mobile</li>
+            <li>Application</li>
+            <li>E-Commerce</li>
+          </ul>
+        </div>
+        <div class="proj-card">
+          <h2></h2>
+          <p>💡</p>
+          <p>
+            Developed a SaaS-based analytics dashboard for Insightly, focusing
+            on providing actionable insights through a user-centric design. The
+            dashboard improved data accessibility and was adopted by 80% of
+            users within the first three months.
+          </p>
+
+          <ul>
+            <li>Web 3.0</li>
+            <li>HTML</li>
+            <li>Dashboard</li>
+          </ul>
+        </div>
+        <div class="proj-card">
+          <h2></h2>
+          <p>💡</p>
+          <p>
+            Developed a SaaS-based analytics dashboard for Insightly, focusing
+            on providing actionable insights through a user-centric design. The
+            dashboard improved data accessibility and was adopted by 80% of
+            users within the first three months.
+          </p>
+
+          <ul>
+            <li>Web 3.0</li>
+            <li>HTML</li>
+            <li>Dashboard</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="rights-reserved">
+        <p>Alguns direitos reservados</p>
+      </section>
+    </main>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: none;
+        list-style: none;
+        text-decoration: none;
+        color: #1e1e1e;
+      }
+
+      section {
+        font-family:
+          "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+          Arial, sans-serif;
+        margin: 5vw 5vw;
+      }
+
+      /* Header */
+      header nav ul {
+        padding: 5px;
+        border: 1px solid #e5e5e5;
+        display: flex;
+        justify-content: center;
+        gap: 1vw;
+        width: fit-content;
+        margin: 2vh auto;
+        border-radius: 5vw;
+
+        & li {
+          padding: 1vh 1vw;
+          border-radius: 5vw;
+        }
+
+        & li:first-of-type {
+          background-color: #1e1e1e;
+
+          & a {
+            color: white;
+          }
+        }
+      }
+
+      /* Hero */
+      section.hero {
+        display: flex;
+        gap: 5vw;
+
+        & h1 {
+          width: 100%;
+          font-size: 4rem;
+          font-weight: normal;
+        }
+
+        & h2 {
+          width: 100%;
+          font-size: 3rem;
+          font-weight: normal;
+          color: #5a5a5a;
+        }
+
+        & span {
+          font-weight: bold;
+        }
+      }
+    </style>
+  </body>
+</html>
