@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,7 @@
   </head>
   <body>
     <main>
+      <!-- start-page -->
       <section class="start-page">
         <h1>Encontre a bandeira</h1>
         <h2>Indique a bandeira que corresponde ao país indicado</h2>
@@ -14,6 +15,7 @@
         <button onclick="startGame()">Iniciar</button>
       </section>
 
+      <!-- game page -->
       <section class="game-page">
         <span class="timer">
           <img src="./images/clock-icon.svg" alt="clock-icon" />
@@ -24,7 +26,7 @@
 
         <h2></h2>
 
-        <ul>
+        <ul class="list-flags">
           <li></li>
           <li></li>
           <li></li>
@@ -98,13 +100,280 @@
     </style>
 
     <script>
-        let startPage = document.querySelector(".start-page")
-        let gamePage = document.querySelector(".game-page")
+      let startPage = document.querySelector(".start-page");
+      let gamePage = document.querySelector(".game-page");
+      let itemsListFlags = document.querySelectorAll(".list-flags li");
 
-        function startGame(){
-            startPage.style.display = "none"
-            gamePage.style.display = "none"
+      gamePage.style.display = "none";
+
+      let listFlags = [
+        {
+          name: "CHILE",
+          src: "./images/flags/001-chile.png",
+          color: "#F8A44C",
+        },
+        {
+          name: "IRLANDA",
+          src: "./images/flags/002-ireland.png",
+          color: "#2D7A3D",
+        },
+        {
+          name: "GRÉCIA",
+          src: "./images/flags/003-greece.png",
+          color: "#2E5AAC",
+        },
+        {
+          name: "NORUEGA",
+          src: "./images/flags/004-norway.png",
+          color: "#BA0C2F",
+        },
+        {
+          name: "ISRAEL",
+          src: "./images/flags/005-israel.png",
+          color: "#0E5AA7",
+        },
+        {
+          name: "GUATEMALA",
+          src: "./images/flags/006-guatemala.png",
+          color: "#5B8CBE",
+        },
+        { name: "CUBA", src: "./images/flags/007-cuba.png", color: "#C1121F" },
+        {
+          name: "CROÁCIA",
+          src: "./images/flags/008-croatia.png",
+          color: "#1D4ED8",
+        },
+        {
+          name: "PANAMÁ",
+          src: "./images/flags/009-panama.png",
+          color: "#1E40AF",
+        },
+        {
+          name: "ÁFRICA DO SUL",
+          src: "./images/flags/010-south africa.png",
+          color: "#007A4D",
+        },
+        { name: "IRÃ", src: "./images/flags/011-iran.png", color: "#239F40" },
+        {
+          name: "EGITO",
+          src: "./images/flags/012-egypt.png",
+          color: "#C8102E",
+        },
+        {
+          name: "MARROCOS",
+          src: "./images/flags/013-morocco.png",
+          color: "#C1272D",
+        },
+        {
+          name: "DINAMARCA",
+          src: "./images/flags/014-denmark.png",
+          color: "#C60C30",
+        },
+        {
+          name: "REPÚBLICA TCHECA",
+          src: "./images/flags/015-czech republic.png",
+          color: "#11457E",
+        },
+        {
+          name: "FINLÂNDIA",
+          src: "./images/flags/016-finland.png",
+          color: "#003580",
+        },
+        {
+          name: "SUÉCIA",
+          src: "./images/flags/017-sweden.png",
+          color: "#006AA7",
+        },
+        {
+          name: "FILIPINAS",
+          src: "./images/flags/018-philippines.png",
+          color: "#0038A8",
+        },
+        {
+          name: "INGLATERRA",
+          src: "./images/flags/019-england.png",
+          color: "#CE1126",
+        },
+        {
+          name: "SUÍÇA",
+          src: "./images/flags/020-switzerland.png",
+          color: "#D52B1E",
+        },
+        {
+          name: "TURQUIA",
+          src: "./images/flags/021-turkey.png",
+          color: "#E30A17",
+        },
+        {
+          name: "PORTUGAL",
+          src: "./images/flags/022-portugal.png",
+          color: "#006600",
+        },
+        {
+          name: "REINO UNIDO",
+          src: "./images/flags/023-united kingdom.png",
+          color: "#012169",
+        },
+        {
+          name: "COLÔMBIA",
+          src: "./images/flags/024-colombia.png",
+          color: "#FCD116",
+        },
+        {
+          name: "ARGENTINA",
+          src: "./images/flags/025-argentina.png",
+          color: "#74ACDF",
+        },
+        {
+          name: "ÍNDIA",
+          src: "./images/flags/026-india.png",
+          color: "#FF9933",
+        },
+        {
+          name: "ESTADOS UNIDOS",
+          src: "./images/flags/027-united states of america.png",
+          color: "#B31942",
+        },
+        {
+          name: "TAILÂNDIA",
+          src: "./images/flags/028-thailand.png",
+          color: "#A51931",
+        },
+        {
+          name: "CANADÁ",
+          src: "./images/flags/029-canada.png",
+          color: "#D80621",
+        },
+        {
+          name: "MÉXICO",
+          src: "./images/flags/030-mexico.png",
+          color: "#006847",
+        },
+        {
+          name: "ITÁLIA",
+          src: "./images/flags/031-italy.png",
+          color: "#009246",
+        },
+        {
+          name: "ESPANHA",
+          src: "./images/flags/032-spain.png",
+          color: "#AA151B",
+        },
+        {
+          name: "CHINA",
+          src: "./images/flags/033-china.png",
+          color: "#DE2910",
+        },
+        {
+          name: "URUGUAI",
+          src: "./images/flags/034-uruguay.png",
+          color: "#0038A8",
+        },
+        {
+          name: "ALEMANHA",
+          src: "./images/flags/035-germany.png",
+          color: "#000000",
+        },
+        {
+          name: "FRANÇA",
+          src: "./images/flags/036-france.png",
+          color: "#0055A4",
+        },
+        {
+          name: "JAPÃO",
+          src: "./images/flags/037-japan.png",
+          color: "#BC002D",
+        },
+        {
+          name: "COREIA DO SUL",
+          src: "./images/flags/038-south korea.png",
+          color: "#CD2E3A",
+        },
+        {
+          name: "COREIA DO NORTE",
+          src: "./images/flags/039-north korea.png",
+          color: "#024FA2",
+        },
+        {
+          name: "ARÁBIA SAUDITA",
+          src: "./images/flags/040-saudi arabia.png",
+          color: "#006C35",
+        },
+        {
+          name: "HONDURAS",
+          src: "./images/flags/041-honduras.png",
+          color: "#0073CF",
+        },
+        {
+          name: "CURAÇAO",
+          src: "./images/flags/042-curacao.png",
+          color: "#002B7F",
+        },
+        {
+          name: "GUINÉ EQUATORIAL",
+          src: "./images/flags/043-equatorial guinea.png",
+          color: "#009E49",
+        },
+        {
+          name: "LÍBIA",
+          src: "./images/flags/044-libya.png",
+          color: "#239E46",
+        },
+        {
+          name: "SUDÃO",
+          src: "./images/flags/045-sudan.png",
+          color: "#D21034",
+        },
+        {
+          name: "TURCOMENISTÃO",
+          src: "./images/flags/046-turkmenistan.png",
+          color: "#00966E",
+        },
+        { name: "TOGO", src: "./images/flags/047-togo.png", color: "#006A4E" },
+        {
+          name: "SOMÁLIA",
+          src: "./images/flags/048-somalia.png",
+          color: "#4189DD",
+        },
+        {
+          name: "MAURÍCIO",
+          src: "./images/flags/049-mauritius.png",
+          color: "#EA2839",
+        },
+        {
+          name: "MONTENEGRO",
+          src: "./images/flags/050-montenegro.png",
+          color: "#C40308",
+        },
+      ];
+
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          const temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
         }
+        return array;
+      }
+      function setFlags() {
+        let shuffleFlags = shuffle(listFlags);
+        let randomFlags = shuffleFlags.slice(0, 9);
+        let correctFlag = randomFlags[Math.floor(Math.random() * randomFlags,length)]
+
+        itemsListFlags.forEach(function (li){
+          li.addEventListener('click', function () {
+            
+          })
+        })
+      }
+
+      function startGame() {
+        startPage.style.display = "none";
+        gamePage.style.display = "block";
+
+        setFlags();
+      }
     </script>
   </body>
 </html>
