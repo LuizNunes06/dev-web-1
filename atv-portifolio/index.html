@@ -39,16 +39,7 @@
           </ul>
         </div>
         <div class="proj-card">
-          <h2>ShopEase</h2>
-          <img src="./images/shopease-img.png" alt="ShopEase" />
-          <ul>
-            <li>Mobile</li>
-            <li>Application</li>
-            <li>E-Commerce</li>
-          </ul>
-        </div>
-        <div class="proj-card">
-          <h2></h2>
+          <h2>Insightly</h2>
           <p>💡</p>
           <p>
             Developed a SaaS-based analytics dashboard for Insightly, focusing
@@ -64,7 +55,16 @@
           </ul>
         </div>
         <div class="proj-card">
-          <h2></h2>
+          <h2>ShopEase</h2>
+          <img src="./images/shopease-img.png" alt="ShopEase" />
+          <ul>
+            <li>Mobile</li>
+            <li>Application</li>
+            <li>E-Commerce</li>
+          </ul>
+        </div>
+        <div class="proj-card">
+          <h2>Insightly</h2>
           <p>💡</p>
           <p>
             Developed a SaaS-based analytics dashboard for Insightly, focusing
@@ -94,13 +94,17 @@
         list-style: none;
         text-decoration: none;
         color: #1e1e1e;
-      }
-
-      section {
         font-family:
           "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
           Arial, sans-serif;
-        margin: 5vw 5vw;
+      }
+
+      body {
+        background-color: #f5f5f5;
+      }
+
+      section {
+        margin: 3vw 15vw;
       }
 
       /* Header */
@@ -141,15 +145,93 @@
 
         & h2 {
           width: 100%;
-          font-size: 3rem;
+          font-size: 2.95rem;
           font-weight: normal;
           color: #5a5a5a;
+          letter-spacing: 1px;
+          text-wrap-style: pretty;
+
+          & span {
+            color: #5a5a5a;
+          }
         }
 
         & span {
           font-weight: bold;
         }
       }
+
+      /* projects */
+
+      section.projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 2vh;
+
+        & .proj-card {
+          width: 49%;
+          box-sizing: border-box;
+          padding: 3vh 2vw;
+          border: 1px solid #e5e5e5;
+
+          background-color: #fffffe;
+          border-radius: 10px;
+
+          & h2 {
+            font-size: 2rem;
+          }
+
+          & img {
+            width: 100%;
+            margin: 2vh 0;
+          }
+
+          & p:first-of-type {
+            font-size: 3rem;
+            margin: 2vh 0;
+          }
+
+          & p {
+            color: #757575;
+            font-size: 1.6rem;
+            margin-bottom: 2vh;
+            letter-spacing: 1px;
+          }
+
+          & ul {
+            display: flex;
+            gap: 1vw;
+
+            & li {
+              background-color: #f5f5f5;
+              border-radius: 20px;
+              font-weight: bold;
+              padding: 0.8vh 1vw;
+              transition: all .2s ease-in-out;
+            }
+
+            & li:hover{
+              background-color: #dadada;
+              scale: 1.05;
+            }
+          }
+        }
+      }
+
+      section.rights-reserved{
+        border-radius: 20px;
+        border: 1px solid #C2C2C2;
+        background-color: #FFFFFF;
+        text-align: center;
+        padding: 1.5vh 0;
+        
+        & p {
+          color: #7C7C7C;
+          font-size: 1.3rem;
+        }
+      }
+      
     </style>
   </body>
 </html>

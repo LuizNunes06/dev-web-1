@@ -1,67 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portifolio</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href=""></a>Home</a></li>
-                <li><a href=""></a>About</a></li>
-                <li><a href=""></a>Projects</a></li>
-                <li><a href=""></a>Connect</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./connect.html">Connect</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section class="hero">
-            <h1>Projects</h1>
-            <h2>Explore a selection of my work, showcasing how I approach design challenges. Each project reflects my
-                commitment to creating user-centered experiences that blend functionality with aesthetic appeal.</h2>
-        </section>
+      <section class="hero">
+        <h1>Projects</h1>
+        <h2>
+          Explore a selection of my work, showcasing how I approach design
+          challenges. Each project reflects my commitment to creating
+          user-centered experiences that blend functionality with aesthetic
+          appeal.
+        </h2>
+      </section>
 
-        <section class="projects">
-            <ul>
-                <li>
-                    <h2>EcoCharge</h2>
-                    <p> Estações de recarga para veículos elétricos abastecidas com energia solar.</p>
-                </li>
+      <section class="projects">
+        <ul>
+          <li>
+            <h2>EcoCharge</h2>
+            <p>
+              Estações de recarga para veículos elétricos abastecidas com
+              energia solar.
+            </p>
+          </li>
 
-                <li>
-                    <h2>FinWise </h2>
-                    <p>Aplicativo de gestão financeira pessoal com análise de gastos e projeções automáticas.</p>
-                    <img src="./images/finwise-showcase.png" alt="finwise">
-                </li>
+          <li>
+            <h2>FinWise</h2>
+            <p>
+              Aplicativo de gestão financeira pessoal com análise de gastos e
+              projeções automáticas.
+            </p>
+            <img src="./images/finwise-showcase.png" alt="finwise" />
+          </li>
 
-                <li>
-                    <h2>SmartAgro</h2>
-                    <p>Sistema de monitoramento agrícola com sensores IoT para otimizar irrigação e produtividade.</p>
-                </li>
+          <li>
+            <h2>SmartAgro</h2>
+            <p>
+              Sistema de monitoramento agrícola com sensores IoT para otimizar
+              irrigação e produtividade.
+            </p>
+          </li>
 
-                <li>
-                    <h2>PicSphere</h2>
-                    <p>Rede social para compartilhamento de fotos com filtros e álbuns colaborativos.</p>
-                    <img src="./images/picsphere-showcase.png" alt="picsphere">
-                </li>
+          <li>
+            <h2>PicSphere</h2>
+            <p>
+              Rede social para compartilhamento de fotos com filtros e álbuns
+              colaborativos.
+            </p>
+            <img src="./images/picsphere-showcase.png" alt="picsphere" />
+          </li>
 
-                <li>
-                    <h2>HealthTrack</h2>
-                    <p>Aplicativo para acompanhamento de saúde e hábitos, integrando dados de wearables</p>
-                </li>
-                
-                <li>
-                    <h2>MentorHub </h2>
-                    <p>Plataforma de conexão entre mentores e mentorados com videochamadas integradas.</p>
-                    <img src="./images/mentorhub-showcase.png" alt="mentorhub">
-                </li>
-            </ul>
-        </section>
+          <li>
+            <h2>HealthTrack</h2>
+            <p>
+              Aplicativo para acompanhamento de saúde e hábitos, integrando
+              dados de wearables
+            </p>
+          </li>
+
+          <li>
+            <h2>MentorHub</h2>
+            <p>
+              Plataforma de conexão entre mentores e mentorados com
+              videochamadas integradas.
+            </p>
+            <img src="./images/mentorhub-showcase.png" alt="mentorhub" />
+          </li>
+        </ul>
+      </section>
     </main>
-</body>
 
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: none;
+        list-style: none;
+        text-decoration: none;
+        color: #1e1e1e;
+        font-family:
+          "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+          Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+      }
+
+      section {
+        margin: 3vw 15vw;
+      }
+
+      /* Header */
+      header nav ul {
+        padding: 5px;
+        border: 1px solid #e5e5e5;
+        display: flex;
+        justify-content: center;
+        gap: 1vw;
+        width: fit-content;
+        margin: 2vh auto;
+        border-radius: 5vw;
+
+        & li {
+          padding: 1vh 1vw;
+          border-radius: 5vw;
+        }
+
+        & li:nth-of-type(3) {
+          background-color: #1e1e1e;
+
+          & a {
+            color: white;
+          }
+        }
+      }
+
+      /* Hero */
+      section.hero {
+        display: flex;
+        gap: 5vw;
+
+        & h1 {
+          width: 100%;
+          font-size: 4rem;
+          font-weight: normal;
+        }
+
+        & h2 {
+          width: 100%;
+          font-size: 2.95rem;
+          font-weight: normal;
+          color: #5a5a5a;
+          letter-spacing: 1px;
+          text-wrap-style: pretty;
+
+          & span {
+            color: #5a5a5a;
+          }
+        }
+
+        & span {
+          font-weight: bold;
+        }
+      }
+
+      /* projects */
+
+      section.projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 2vh;
+
+        & ul li {
+          margin-bottom: 3vh;
+          box-sizing: border-box;
+          padding: 3vh 2vw;
+          border: 1px solid #e5e5e5;
+
+          background-color: #fffffe;
+          border-radius: 10px;
+
+          & h2 {
+            font-size: 2rem;
+            margin-bottom: 3vh;
+          }
+
+          & img {
+            width: 100%;
+            margin-top: 2vh;
+            border-radius: 12px;
+          }
+
+          & p {
+            color: #757575;
+            letter-spacing: 1px;
+          }
+
+          & ul {
+            display: flex;
+            gap: 1vw;
+
+            & li {
+              background-color: #f5f5f5;
+              border-radius: 20px;
+              font-weight: bold;
+              padding: 0.8vh 1vw;
+              transition: all .2s ease-in-out;
+            }
+
+            & li:hover{
+              background-color: #dadada;
+              scale: 1.05;
+            }
+          }
+        }
+      }
+
+      section.rights-reserved{
+        border-radius: 20px;
+        border: 1px solid #C2C2C2;
+        background-color: #FFFFFF;
+        text-align: center;
+        padding: 1.5vh 0;
+        
+        & p {
+          color: #7C7C7C;
+          font-size: 1.3rem;
+        }
+      }
+      
+    </style>
+  </body>
 </html>
